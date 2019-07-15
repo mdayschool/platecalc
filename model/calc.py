@@ -1,5 +1,5 @@
 
-def get_plates(weight, sizes=[45,25,10,5,2.5], bar=45):
+def get_plates(weight, bar=45, sizes=[45,25,10,5,2.5]):
     """Calculates plates to be added to each end of bar."""
     weights = dict()
     if weight - bar < 0:
