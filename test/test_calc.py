@@ -33,3 +33,7 @@ class CalcTestCase(unittest.TestCase):
     def test_getplates_custom_plates(self):
         self.assertEqual({45:1, 1.25:1},
                          calc.get_plates(137.5, 45, [45,25,10,5,2.5,1.25]))
+
+    def test_getplates_custom_plates_unordered(self):
+        self.assertEqual({45:1, 1.25:1},
+                         calc.get_plates(137.5, 45, [10,25,45,5,2.5,1.25]))
