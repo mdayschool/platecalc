@@ -7,6 +7,11 @@ def get_plates(weight, sizes=[45,25,10,5,2.5], bar=45):
     smallest = min(sizes)
     if remaining % smallest > 0:
         raise NotDivisible
+    for s in sizes:
+        num = remaining // (s*2)
+        remaining = remaining % (s*2)
+        if num > 0:
+            weights.update({s:num})
     return weights
 
 class LessThanBar(ValueError):
