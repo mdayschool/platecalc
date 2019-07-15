@@ -1,11 +1,12 @@
 
 def get_plates(weight, sizes=[45,25,10,5,2.5], bar=45):
+    """Calculates plates to be added to each end of bar."""
     weights = dict()
     if weight - bar < 0:
         raise LessThanBar
     remaining = weight - bar
     smallest = min(sizes)
-    if remaining % smallest > 0:
+    if remaining % (smallest*2) > 0:
         raise NotDivisible
     for s in sizes:
         num = remaining // (s*2)
@@ -15,8 +16,10 @@ def get_plates(weight, sizes=[45,25,10,5,2.5], bar=45):
     return weights
 
 class LessThanBar(ValueError):
+    """Raised when weight is less than bar."""
     pass
 
 class NotDivisible(ValueError):
+    """Raised when weight not divisible by smallest plate."""
     pass
 
