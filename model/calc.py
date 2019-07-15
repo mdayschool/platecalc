@@ -8,6 +8,7 @@ def get_plates(weight, bar=45, sizes=[45,25,10,5,2.5]):
     smallest = min(sizes)
     if remaining % (smallest*2) > 0:
         raise NotDivisible
+    sizes.sort(reverse=True)
     for s in sizes:
         num = remaining // (s*2)
         remaining = remaining % (s*2)
