@@ -17,7 +17,8 @@ def get_plates(weight, bar=45, sizes=[45,25,10,5,2.5]):
     return weights
 
 def get_list(string):
-    pass
+    the_list = [float(s) for s in string.split(', ')]
+    return the_list
 
 class LessThanBar(ValueError):
     """Raised when weight is less than bar."""
