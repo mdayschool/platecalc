@@ -29,3 +29,7 @@ class CalcTestCase(unittest.TestCase):
     def test_getplates_custom_bar_lessthanbar(self):
         with self.assertRaises(calc.LessThanBar):
             calc.get_plates(12, 25)
+
+    def test_getplates_custom_plates(self):
+        self.assertEqual({45:1, 1.25:1},
+                         calc.get_plates(137.5, 45, [45,25,10,5,2.5,1.25]))
