@@ -16,6 +16,9 @@ def get_plates(weight, bar=45, sizes=[45,25,10,5,2.5]):
             weights.update({s:num})
     return weights
 
+def get_list(string):
+    pass
+
 class LessThanBar(ValueError):
     """Raised when weight is less than bar."""
     pass

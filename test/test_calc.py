@@ -1,7 +1,7 @@
 import unittest
 from model import calc
 
-class CalcTestCase(unittest.TestCase):
+class GetPlatesTestCase(unittest.TestCase):
     def test_getplates_empty(self):
         empty_dict = dict();
         self.assertEqual(empty_dict, calc.get_plates(45))
@@ -37,3 +37,7 @@ class CalcTestCase(unittest.TestCase):
     def test_getplates_custom_plates_unordered(self):
         self.assertEqual({45:1, 1.25:1},
                          calc.get_plates(137.5, 45, [10,25,45,5,2.5,1.25]))
+
+class GetListTestCase(unittest.TestCase):
+    def test_getlist_standard(self):
+        self.assertEqual([10,5,2.5,1.25], calc.get_list('10, 5, 2.5, 1.25'))
