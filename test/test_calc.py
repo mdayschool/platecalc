@@ -23,4 +23,5 @@ class CalcTestCase(unittest.TestCase):
     def test_getplates_standard_weights_3(self):
         self.assertEqual({45:1, 25:1, 2.5:1}, calc.get_plates(190))
 
-
+    def test_getplates_custom_bar(self):
+        self.assertEqual({25:1}, calc.get_plates(75, 25))
